@@ -21,36 +21,18 @@ The system uses an event-driven architecture where services communicate asynchro
 - Node.js 18+ (for local development)
 - npm or yarn
 
-## Project Structure
-microservices-demo/
-├── docker-compose.yml
-├── .dockerignore
-├── order-service/
-│ ├── src/
-│ │ ├── server.ts
-│ │ ├── orderController.ts
-│ │ └── orderService.ts
-│ ├── Dockerfile
-│ ├── package.json
-│ └── tsconfig.json
-└── notification-service/
-├── src/
-│ ├── server.ts
-│ └── notificationService.ts
-├── Dockerfile
-├── package.json
-└── tsconfig.json
 
 ## Getting Started
 
 1. Clone the repository:
-bash
+```bash
 git clone <repository-url>
 cd microservices-demo
-
+```
 2. Start the services using Docker Compose:
-bash
+```bash
 docker-compose up --build
+```
 This will start:
 - RabbitMQ on port 5672 (AMQP) and 15672 (Management UI)
 - Order Service on port 3000
@@ -138,21 +120,16 @@ The services communicate through RabbitMQ using the following event:
 ## Environment Variables
 
 ### Order Service
-- `RABBITMQ_URL`: RabbitMQ connection URL (default: amqp://guest:guest@rabbitmq:5672)
+- `RABBITMQ_URL`: RabbitMQ connection URL (default: amqp://guest:guest@localhost:5672)
 - `PORT`: Service port (default: 3000)
-
+- `ORDER_NOTIFICATIONS_QUEUE`: Queue name for order notifications (default: order_notifications)
 ### Notification Service
-- `RABBITMQ_URL`: RabbitMQ connection URL (default: amqp://guest:guest@rabbitmq:5672)
+- `RABBITMQ_URL`: RabbitMQ connection URL (default: amqp://guest:guest@localhost:5672)
 - `PORT`: Service port (default: 3001)
+- `ORDER_NOTIFICATIONS_QUEUE`: Queue name for order notifications (default: order_notifications)
 
-## Contributing
+## Testing
+From the notification-service / order-service directory
+- `npm run test`: Run all tests
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
