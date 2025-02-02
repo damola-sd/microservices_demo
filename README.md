@@ -99,6 +99,8 @@ docker-compose down
 - View logs:
 ```bash
 docker-compose logs -f [service-name]
+example:
+docker-compose logs -f notification-service
 ```
 
 
