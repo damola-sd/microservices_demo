@@ -59,13 +59,16 @@ Access the RabbitMQ Management interface at:
 ### Local Development Setup
 
 1. Install dependencies for each service:
-bash
+``` 
 cd order-service && npm install
-cd ../notification-service && npm install\
+cd ../notification-service && npm install
+```
 
 2. Copy .env.example to .env and update the variables
+```
 - RABBITMQ_URL=amqp://guest:guest@localhost:5672
 - ORDER_NOTIFICATIONS_QUEUE=order_notifications
+```
 
 3. Run services in development mode:
 ```bash
