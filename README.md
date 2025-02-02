@@ -71,7 +71,7 @@ cd ../notification-service && npm install
 ```
 
 3. Run services in development mode:
-```bash
+```
 In order-service directory
 npm run dev
 In notification-service directory
