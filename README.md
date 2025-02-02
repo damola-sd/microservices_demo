@@ -107,7 +107,7 @@ docker-compose logs -f [service-name]
 The services communicate through RabbitMQ using the following event:
 
 - `ORDER_CREATED`: Published by Order Service when a new order is created
-      ```typescript
+```typescript
   {
     type: 'ORDER_CREATED',
     payload: {
