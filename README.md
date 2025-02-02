@@ -142,3 +142,10 @@ From the notification-service / order-service directory
 - `npm run test`: Run all tests
 
 
+## Summary
+
+Decisions made:
+- Deciding to containerize the RabbitMQ service istead of using the a local RabbitMQ instance. Ultimately, this was good because it gives me greater control over the RabbitMQ instance and while also ensuring that it runs in other environments
+- Also using docker compose to run the services.
+- setting up environment variables for the services.
+
